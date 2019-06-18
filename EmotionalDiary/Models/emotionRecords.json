@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "situation": "My friends made me a surprise birthday party.",
+        "feelings": ["Happiness", "Surprising"],
+        "thoughts": "It was a realy good demostration of care.",
+        "result": "..."
+    },
+    {
+        "id": 2,
+        "situation": "Something happen...",
+        "feelings": ["Sadness", "Angry"],
+        "thoughts": "It was ...",
+        "result": "..."
+    }
+]

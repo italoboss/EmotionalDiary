@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="true" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14838.16" systemVersion="19A471t" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Emotion" representedClassName="Emotion" syncable="YES" codeGenerationType="class">
+        <attribute name="createdAt" optional="YES" attributeType="Date" defaultDateTimeInterval="582128460" usesScalarValueType="NO"/>
+        <attribute name="feeling" optional="YES" attributeType="String" defaultValueString="-"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="result" optional="YES" attributeType="String" defaultValueString="-"/>
+        <attribute name="situation" optional="YES" attributeType="String" defaultValueString="-"/>
+        <attribute name="thoughts" optional="YES" attributeType="String" defaultValueString="-"/>
+    </entity>
+    <elements>
+        <element name="Emotion" positionX="-63" positionY="-18" width="128" height="133"/>
+    </elements>
 </model>
