@@ -19,7 +19,7 @@ struct EmotionRecordDetail : View {
 #if DEBUG
 struct EmotionRecordDetail_Previews : PreviewProvider {
     static var previews: some View {
-        EmotionRecordDetail(emotion: EmotionRecord(id: 1, situation: "Abc", feelings: [.happiness], thoughts: "Cde", result: "Fgh"))
+        EmotionRecordDetail(emotion: EmotionRecord(id: 1, situation: "A", feelings: [.happiness], thoughts: "B", result: "C", creationDate: Date()))
     }
 }
 #endif

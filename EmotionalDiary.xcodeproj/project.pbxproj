@@ -20,6 +20,9 @@
 		0C390FDF22B269220062444B /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C390FDE22B269220062444B /* Data.swift */; };
 		0C390FE222B286040062444B /* EmotionRecordRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C390FE122B286040062444B /* EmotionRecordRow.swift */; };
 		0C390FE522B287330062444B /* EmotionRecordFeeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C390FE422B287330062444B /* EmotionRecordFeeling.swift */; };
+		0C52699D22B8FF57009B5B06 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C52699C22B8FF57009B5B06 /* CoreDataManager.swift */; };
+		0C5269A022B8FFA8009B5B06 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C52699F22B8FFA8009B5B06 /* ErrorHandler.swift */; };
+		0C5269A222B90056009B5B06 /* EmotionDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5269A122B90056009B5B06 /* EmotionDAO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		0C390FDE22B269220062444B /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		0C390FE122B286040062444B /* EmotionRecordRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionRecordRow.swift; sourceTree = "<group>"; };
 		0C390FE422B287330062444B /* EmotionRecordFeeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionRecordFeeling.swift; sourceTree = "<group>"; };
+		0C52699C22B8FF57009B5B06 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		0C52699F22B8FFA8009B5B06 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
+		0C5269A122B90056009B5B06 /* EmotionDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionDAO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,7 @@
 				0C390FD122AFE9490062444B /* Info.plist */,
 				0C390FC422AFE9440062444B /* EmotionalDiary.xcdatamodeld */,
 				0C390FCB22AFE9490062444B /* Preview Content */,
+				0C52699F22B8FFA8009B5B06 /* ErrorHandler.swift */,
 			);
 			path = EmotionalDiary;
 			sourceTree = "<group>";
@@ -124,6 +131,8 @@
 		0C52699B22B8FD6B009B5B06 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
+				0C52699C22B8FF57009B5B06 /* CoreDataManager.swift */,
+				0C5269A122B90056009B5B06 /* EmotionDAO.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -202,12 +211,15 @@
 			files = (
 				0C390FDF22B269220062444B /* Data.swift in Sources */,
 				0C390FC122AFE9440062444B /* AppDelegate.swift in Sources */,
+				0C5269A222B90056009B5B06 /* EmotionDAO.swift in Sources */,
 				0C390FC622AFE9440062444B /* EmotionalDiary.xcdatamodeld in Sources */,
 				0C390FE222B286040062444B /* EmotionRecordRow.swift in Sources */,
+				0C5269A022B8FFA8009B5B06 /* ErrorHandler.swift in Sources */,
 				0C390FC822AFE9440062444B /* ContentView.swift in Sources */,
 				0C390FDA22B147430062444B /* EmotionRecord.swift in Sources */,
 				0C390FE522B287330062444B /* EmotionRecordFeeling.swift in Sources */,
 				0C390FC322AFE9440062444B /* SceneDelegate.swift in Sources */,
+				0C52699D22B8FF57009B5B06 /* CoreDataManager.swift in Sources */,
 				0C390FDC22B1485E0062444B /* EmotionRecordDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

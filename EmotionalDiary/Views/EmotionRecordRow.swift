@@ -13,8 +13,10 @@ struct EmotionRecordRow : View {
     
     var body: some View {
         HStack {
-            Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
-            
+            Text(emotion.feelings[0].image)
+            VStack {
+                Text("Test")
+            }
         }
     }
 }
@@ -22,7 +24,7 @@ struct EmotionRecordRow : View {
 #if DEBUG
 struct EmotionRecordRow_Previews : PreviewProvider {
     static var previews: some View {
-        EmotionRecordDetail(emotion: EmotionRecord(id: 1, situation: "Abc", feelings: [.happiness], thoughts: "Cde", result: "Fgh"))
+        EmotionRecordRow(emotion: EmotionRecord(id: 1, situation: "A", feelings: [.happiness], thoughts: "B", result: "C", creationDate: Date()))
     }
 }
 #endif
