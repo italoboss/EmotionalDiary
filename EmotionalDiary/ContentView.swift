@@ -9,8 +9,21 @@
 import SwiftUI
 
 struct ContentView : View {
+    @State private var selection = 0
+    
     var body: some View {
-        Text("Hello World")
+        TabbedView(selection: $selection) {
+            NavigationView {
+                List {
+                    Text("Test 1")
+                    Text("Test 2")
+                    Text("Test 3")
+                    }
+                    .navigationBarTitle(Text("Title"))
+            }
+            .tabItemLabel(Text("Resume"))
+            .tag(0)
+        }
     }
 }
 
