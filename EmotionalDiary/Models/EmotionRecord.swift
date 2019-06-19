@@ -6,12 +6,12 @@
 //  Copyright © 2019 Italo Boss. All rights reserved.
 //
 
-import Foundation
+import SwiftUI
 
-struct EmotionRecord: Hashable, Codable {
+struct EmotionRecord: Hashable, Codable, Identifiable {
     var id: Int
     var situation: String
-    var feelings: [Feeling]
+    var feeling: Feeling
     var thoughts: String
     var result: String
     var creationDate: Date
@@ -33,17 +33,8 @@ struct EmotionRecord: Hashable, Codable {
         }
     }
     
-    init(id: Int, situation: String, feelings: [Feeling], thoughts: String, result: String, creationDate: Date) {
-        self.id = id
-        self.situation = situation
-        self.feelings = feelings
-        self.thoughts = thoughts
-        self.result = result
-        self.creationDate = creationDate
-    }
-    
-    init?(from local: Emotion) {
-        self.id = Int(local.id)
+    static func convert(from local: Emotion) -> EmotionRecord? {
+        let id = Int(local.id)
         
         guard let situation = local.situation,
                 let thoughts = local.thoughts,
@@ -53,12 +44,8 @@ struct EmotionRecord: Hashable, Codable {
                 return nil
         }
         
-        self.situation = situation
-        self.thoughts = thoughts
-        self.result = result
-        self.creationDate = creation
-        
-        self.feelings = [.happiness]
+        let feeling = Feeling.happiness
+        return EmotionRecord(id: id, situation: situation, feeling: feeling, thoughts: thoughts, result: result, creationDate: creation)
     }
     
     func convertToManagedObject() -> Emotion {

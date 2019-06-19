@@ -13,9 +13,12 @@ struct EmotionRecordRow : View {
     
     var body: some View {
         HStack {
-            Text(emotion.feelings[0].image)
-            VStack {
-                Text("Test")
+            Text(emotion.feeling.image)
+                .font(.largeTitle)
+            VStack(alignment: .leading) {
+                Text(emotion.situation)
+                Text(emotion.thoughts)
+                    .fontWeight(.thin)
             }
         }
     }
@@ -24,7 +27,8 @@ struct EmotionRecordRow : View {
 #if DEBUG
 struct EmotionRecordRow_Previews : PreviewProvider {
     static var previews: some View {
-        EmotionRecordRow(emotion: EmotionRecord(id: 1, situation: "A", feelings: [.happiness], thoughts: "B", result: "C", creationDate: Date()))
+        EmotionRecordRow(emotion: EmotionRecord(id: 1, situation: "Something", feeling: .happiness, thoughts: "Some", result: "C", creationDate: Date()))
+        .previewLayout(.sizeThatFits)
     }
 }
 #endif

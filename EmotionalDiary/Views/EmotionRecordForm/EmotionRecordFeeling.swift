@@ -50,5 +50,5 @@ struct FormButton : View {
         .accentColor(Color.white)
         .background(Color.primary)
         .cornerRadius(50)
-}
+    }
 }

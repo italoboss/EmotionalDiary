@@ -23,6 +23,8 @@
 		0C52699D22B8FF57009B5B06 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C52699C22B8FF57009B5B06 /* CoreDataManager.swift */; };
 		0C5269A022B8FFA8009B5B06 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C52699F22B8FFA8009B5B06 /* ErrorHandler.swift */; };
 		0C5269A222B90056009B5B06 /* EmotionDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5269A122B90056009B5B06 /* EmotionDAO.swift */; };
+		0C7BFEFE22B92F23005116C9 /* EmotionsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7BFEFD22B92F23005116C9 /* EmotionsList.swift */; };
+		0C7BFF0222B9AF71005116C9 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7BFF0122B9AF71005116C9 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,9 @@
 		0C52699C22B8FF57009B5B06 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		0C52699F22B8FFA8009B5B06 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		0C5269A122B90056009B5B06 /* EmotionDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionDAO.swift; sourceTree = "<group>"; };
+		0C7BFEFD22B92F23005116C9 /* EmotionsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionsList.swift; sourceTree = "<group>"; };
+		0C7BFEFF22B9AF65005116C9 /* EmotionalDiary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EmotionalDiary.entitlements; sourceTree = "<group>"; };
+		0C7BFF0122B9AF71005116C9 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C7BFF0222B9AF71005116C9 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +68,7 @@
 			children = (
 				0C390FBF22AFE9440062444B /* EmotionalDiary */,
 				0C390FBE22AFE9440062444B /* Products */,
+				0C7BFF0022B9AF71005116C9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +83,7 @@
 		0C390FBF22AFE9440062444B /* EmotionalDiary */ = {
 			isa = PBXGroup;
 			children = (
+				0C7BFEFF22B9AF65005116C9 /* EmotionalDiary.entitlements */,
 				0C52699B22B8FD6B009B5B06 /* Persistence */,
 				0C390FDD22B268CF0062444B /* Models */,
 				0C390FE022B285E10062444B /* Views */,
@@ -116,6 +124,7 @@
 				0C390FE322B286F20062444B /* EmotionRecordForm */,
 				0C390FDB22B1485E0062444B /* EmotionRecordDetail.swift */,
 				0C390FE122B286040062444B /* EmotionRecordRow.swift */,
+				0C7BFEFD22B92F23005116C9 /* EmotionsList.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -135,6 +144,14 @@
 				0C5269A122B90056009B5B06 /* EmotionDAO.swift */,
 			);
 			path = Persistence;
+			sourceTree = "<group>";
+		};
+		0C7BFF0022B9AF71005116C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C7BFF0122B9AF71005116C9 /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +232,7 @@
 				0C390FC622AFE9440062444B /* EmotionalDiary.xcdatamodeld in Sources */,
 				0C390FE222B286040062444B /* EmotionRecordRow.swift in Sources */,
 				0C5269A022B8FFA8009B5B06 /* ErrorHandler.swift in Sources */,
+				0C7BFEFE22B92F23005116C9 /* EmotionsList.swift in Sources */,
 				0C390FC822AFE9440062444B /* ContentView.swift in Sources */,
 				0C390FDA22B147430062444B /* EmotionRecord.swift in Sources */,
 				0C390FE522B287330062444B /* EmotionRecordFeeling.swift in Sources */,
@@ -356,6 +374,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = EmotionalDiary/EmotionalDiary.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "EmotionalDiary/Preview\\ Content";
 				DEVELOPMENT_TEAM = MR4W4QZ7CS;
@@ -376,6 +395,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = EmotionalDiary/EmotionalDiary.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "EmotionalDiary/Preview\\ Content";
 				DEVELOPMENT_TEAM = MR4W4QZ7CS;

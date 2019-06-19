@@ -6,36 +6,36 @@
 //  Copyright © 2019 Italo Boss. All rights reserved.
 //
 
-import Foundation
+import SwiftUI
 
-class MovieDao {
+class EmotionDao {
     
-    static let shared = MovieDao()
+    static let shared = EmotionDao()
     
-    func save(_ movie: EmotionRecord) -> Bool {
-        _ = movie.convertToManagedObject()
+    func save(_ emotion: EmotionRecord) -> Bool {
+        _ = emotion.convertToManagedObject()
         return CoreDataManager.shared.saveContext()
     }
     
-    func delete(_ movie: EmotionRecord) -> Bool {
-        guard let emotion: Emotion = CoreDataManager.shared.fetchObject(by: movie.id) else { return false }
+    func delete(_ emotion: EmotionRecord) -> Bool {
+        guard let emotion: Emotion = CoreDataManager.shared.fetchObject(by: emotion.id) else { return false }
         return CoreDataManager.shared.delete(emotion)
     }
     
     func get(by id: Int) -> EmotionRecord? {
         guard let local: Emotion = CoreDataManager.shared.fetchObject(by: id) else { return nil }
-        let emotion = EmotionRecord(from: local)
+        let emotion = EmotionRecord.convert(from: local)
         return emotion
     }
     
-    func getAll(in alphabeticOrder: Bool = true) -> [EmotionRecord]? {
+    func getAll(in alphabeticOrder: Bool = false) -> [EmotionRecord] {
         var sorters: [NSSortDescriptor]? = nil
         if alphabeticOrder {
-            sorters = [ NSSortDescriptor(key: "title", ascending: true) ]
+            sorters = [ NSSortDescriptor(key: "situation", ascending: true) ]
         }
-        guard let locals: [Emotion] = CoreDataManager.shared.fecth(sorting: sorters) else { return nil }
-        let movies = locals.compactMap { (local) -> EmotionRecord? in EmotionRecord(from: local) }
-        return movies
+        guard let locals: [Emotion] = CoreDataManager.shared.fecth(sorting: sorters) else { return [] }
+        let emotions = locals.compactMap { (local) -> EmotionRecord? in EmotionRecord.convert(from: local) }
+        return emotions
     }
     
 }

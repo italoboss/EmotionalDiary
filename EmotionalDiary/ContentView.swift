@@ -9,22 +9,31 @@
 import SwiftUI
 
 struct ContentView : View {
-    @State private var selection = 0
     
     var body: some View {
-        TabbedView(selection: $selection) {
+        TabbedView {
+            EmotionsList()
+            .tabItemLabel(
+                VStack {
+                    Image(systemName: "heart.fill")
+                    Text("Emotions")
+                }
+            )
+            .tag(0)
+            
             NavigationView {
                 List {
-                    Text("Test 1")
-                    Text("Test 2")
-                    Text("Test 3")
-                    }
-                    .navigationBarTitle(Text("Title"))
+                    EmotionRecordRow(emotion: EmotionRecord(id: 1, situation: "Something", feeling: .happiness, thoughts: "Some...", result: "Result", creationDate: Date()))
+                }
+                .navigationBarTitle(Text("Your emotions"))
             }
-            .tabItemLabel(Text("Resume"))
-            .tag(0)
+            .tabItemLabel(
+                Text("Resume")
+            )
+            .tag(1)
         }
     }
+    
 }
 
 #if DEBUG
