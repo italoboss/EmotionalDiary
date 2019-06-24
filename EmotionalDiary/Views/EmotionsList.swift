@@ -25,7 +25,7 @@ struct EmotionsList : View {
                         .imageScale(.large)
                         .accessibility(label: Text("Add new emotion"))
                         .padding(),
-                    destination: EmotionRecordFeeling(feeling: ""))
+                    destination: EmotionRecordFeeling())
             )
         }
         

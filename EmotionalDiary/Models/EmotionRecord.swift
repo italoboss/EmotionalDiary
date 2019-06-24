@@ -37,6 +37,8 @@ struct EmotionRecord: Hashable, Codable, Identifiable {
         let id = Int(local.id)
         
         guard let situation = local.situation,
+                let feelingText = local.feeling,
+                let feeling = Feeling(rawValue: feelingText),
                 let thoughts = local.thoughts,
                 let result = local.result,
                 let creation = local.createdAt
@@ -44,7 +46,6 @@ struct EmotionRecord: Hashable, Codable, Identifiable {
                 return nil
         }
         
-        let feeling = Feeling.happiness
         return EmotionRecord(id: id, situation: situation, feeling: feeling, thoughts: thoughts, result: result, creationDate: creation)
     }
     
@@ -52,7 +53,7 @@ struct EmotionRecord: Hashable, Codable, Identifiable {
         let emotion: Emotion = CoreDataManager.shared.initManagedObject()
         emotion.id = Int32(self.id)
         emotion.createdAt = Date()
-        // emotion.feelings
+        emotion.feeling = self.feeling.rawValue
         emotion.situation = self.situation
         emotion.thoughts = self.thoughts
         emotion.result = self.result
